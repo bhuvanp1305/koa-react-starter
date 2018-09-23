@@ -1,0 +1,14 @@
+{
+  "Server": {
+    "port": 3000
+  },
+  "Setup": {
+    "dropDatabase": false,
+    "data": false
+  },
+  "Database": {
+    "dbName": "nnxt",
+    "url": "mongodb://localhost/nnxt",
+    "useMongoClient": true
+  }
+}

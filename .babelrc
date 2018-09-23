@@ -1,0 +1,20 @@
+{
+  "presets": [],
+  "plugins": [],
+  "env": {
+    "server": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "debug": false,
+            "useBuiltIns": "false",
+            "targets": {
+              "node": "8.11"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
