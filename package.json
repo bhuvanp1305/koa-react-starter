@@ -15,7 +15,9 @@
     "mongoose": "^5.2.17"
   },
   "scripts": {
-    "server.start": "cross-env BABEL_ENV=server NODE_EVN=development nodemon ./server/server.js --exec babel-node"
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cross-env BABEL_ENV=server NODE_EVN=development nodemon ./server/server.js --exec babel-node",
+    "client": "node start-client.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
@@ -23,6 +25,7 @@
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.0.2",
+    "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
     "nodemon": "^1.18.4",
     "webpack": "^4.19.1"
