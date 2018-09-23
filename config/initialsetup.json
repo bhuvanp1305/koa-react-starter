@@ -1,0 +1,18 @@
+{
+  "Setup": {
+    "dropDatabase": true,
+    "data": true,
+    "superAdminUser": {
+      "email": "superadmin@aripratech.com",
+      "password": "superadmin@123"
+    },
+    "adminUser": {
+      "email": "admin@aripratech.com",
+      "password": "admin@123"
+    }
+  },
+  "Database": {
+    "dbName": "koa-react-starter",
+    "url": "mongodb://localhost/koa-react-starter"
+  }
+}

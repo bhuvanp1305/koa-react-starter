@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {hydrate} from 'react-dom'
+import AppRouterContainer from './containers/AppRouterContainer'
+import {BrowserRouter} from 'react-router-dom'
+import {Provider} from 'react-redux'
+import {createStore, applyMiddleware} from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import logger from 'redux-logger'
+import reducers from './reducers'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+let store = createStore(reducers, {}, applyMiddleware(thunkMiddleware, logger))
+const App = props =>
+    <Provider store={store}>
+        <BrowserRouter>
+            <AppRouterContainer/>
+        </BrowserRouter>
+    </Provider>
 
-export default App;
+export default App

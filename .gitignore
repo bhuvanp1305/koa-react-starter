@@ -21,3 +21,6 @@ yarn-debug.log*
 yarn-error.log*
 .idea/vcs.xml
 .idea/workspace.xml
+client/.idea/
+combined.log
+server/.idea/
