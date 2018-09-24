@@ -28,7 +28,7 @@ roleSchema.statics.getAllBasic = async () => {
 }
 
 roleSchema.statics.getWithConfigurablePerms = async () => {
-    return await RoleModel.aggregate({
+    return await RoleModel.aggregate([{
             $match: {
                 'name': {$nin: [ROLE_SUPER_ADMIN]}
             }
@@ -43,7 +43,7 @@ roleSchema.statics.getWithConfigurablePerms = async () => {
                     }
                 }
             }
-        }
+        }]
     )
 }
 

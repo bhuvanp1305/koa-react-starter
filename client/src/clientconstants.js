@@ -1,4 +1,4 @@
-export const ROLE_ADMIN = 'admin'
+export const ROLE_ADMIN = 'Admin'
 export const ROLE_SUPER_ADMIN = 'Super Admin'
 export const ROLE_APP_USER = 'App User'
 

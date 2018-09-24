@@ -70,7 +70,7 @@ publicRouter.get('/execute', async ctx => {
     //return await UserModel.findOneAndUpdate({email:'schouhan@aripratech.com'}, {$set:{'firstName':'Ekaksh'}}, {new:true})
 
 
-    return await UserModel.aggregate({
+    return await UserModel.aggregate([{
         $match: {email: 'appuser@test.com'}
     }, {
         $unwind: {
@@ -109,7 +109,7 @@ publicRouter.get('/execute', async ctx => {
             lastName: {$first: "$lastName"},
             roles: {$push: "$roles"}
         }
-    }).exec()
+    }]).exec()
 })
 
 export default publicRouter
